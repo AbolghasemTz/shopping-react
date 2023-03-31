@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import { BsBagCheck } from "react-icons/bs";
 import { AiOutlineUser, AiOutlineClose } from "react-icons/ai";
 import { HiMenuAlt1 } from "react-icons/hi";
+import { useCart } from "../../context/CartContext/CartProvider";
 function Navigation(props) {
+  const { cart } = useCart();
   const [open, setOpen] = useState(false);
 
   return (
@@ -39,7 +41,7 @@ function Navigation(props) {
         <div className="flex items-center gap-6 ">
           <div className="flex items-center">
             <div className="flex items-center bg-blue-400 py-2 px-3 rounded-md">
-              <span className="inline-block ml-4 text-gray-100 text-xl">0</span>
+              <span className="inline-block ml-4 text-gray-100 text-xl">{cart.length}</span>
               |
               <Link to="/cart">
                 <BsBagCheck size={30} className="text-gray-100 mr-3" />

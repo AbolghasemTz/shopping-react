@@ -13,7 +13,7 @@ import ProductHome from "../components/HomeComponents/ProductHome";
 
 function Home(props) {
   return (
-    <Layout>
+    <div>
       <Carousel />
 
       <section className="flex md:flex-row flex-col-reverse  justify-around items-center md:mt-28 sm:mt-[-300px] mt-[-220px] mb-24 ">
@@ -152,7 +152,7 @@ function Home(props) {
           </div>
         </div>
       </section>
-    </Layout>
+    </div>
   );
 }
 
