@@ -1,6 +1,4 @@
 import React from "react";
-import Layout from "../components/layout/Layout";
-import justPic from "../assets/images/just.jpg";
 import { Link } from "react-router-dom";
 
 // icons
@@ -8,15 +6,20 @@ import { GiWorld } from "react-icons/gi";
 import { BsClock, BsGift, BsPaypal } from "react-icons/bs";
 import { FaHandHoldingUsd } from "react-icons/fa";
 
-import Carousel from "../components/HomeComponents/Carousel";
+// pic
+import justPic from "../assets/images/just.jpg";
+
+// components
 import ProductHome from "../components/HomeComponents/ProductHome";
+import Slider from "../components/HomeComponents/Carousel";
 
 function Home(props) {
   return (
-    <div>
-      <Carousel />
+    <div className="">
+      <Slider />
 
-      <section className="flex md:flex-row flex-col-reverse  justify-around items-center md:mt-28 sm:mt-[-300px] mt-[-220px] mb-24 ">
+      {/* just do it */}
+      <section className="flex md:flex-row flex-col-reverse justify-around items-center py-10 ">
         <div className="md:m-0 mt-16">
           <h3 className="font-bold text-3xl border-b border-dotted border-gray-800 pb-8">
             هیچ وقت متوقف نشو ..
@@ -24,7 +27,7 @@ function Home(props) {
           <p className="p-8 text-xl">هیچ چیز غیر ممکن نیست!</p>
 
           <Link
-            to="/shop"
+            to="/products"
             className="bg-gray-800 text-gray-100 rounded-3xl px-6 py-3 inline-block 
                     hover:bg-gray-300 hover:text-gray-800 duration-300 
                     "
@@ -34,7 +37,7 @@ function Home(props) {
         </div>
         <div>
           <img
-            className="w-96 cursor-pointer hover:translate-x-[-5px] duration-300"
+            className="md:w-92 w-80 cursor-pointer hover:translate-x-[-5px] duration-300"
             src={justPic}
             alt="just do it"
           />
@@ -114,7 +117,7 @@ function Home(props) {
           نظر مشتریان
         </h3>
 
-        <div className="flex md:flex-row flex-col items-center px-10 ">
+        <div className="flex md:flex-row flex-col items-center md:px-10 ">
           <div className="w-[92%] py-4 px-6 mx-1 md:mt-0 mt-6  rounded-lg border border-gray-300 shadow-xl">
             <p className="text-sm leading-8 pt-4">
               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
@@ -128,18 +131,6 @@ function Home(props) {
           </div>
 
           <div className="w-[92%] py-4 px-6 mx-1 md:mt-0 mt-6   rounded-lg border border-gray-300 shadow-xl">
-            <p className="text-sm leading-8 pt-4">
-              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
-              استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله
-              در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
-            </p>
-            <div>
-              <div className="w-20 h-20 rounded-full bg-emerald-800 mb-6 mt-6"></div>
-              <p className="mt-4">میلاد</p>
-            </div>
-          </div>
-
-          <div className="w-[92%] py-4 px-6 mx-1 md:mt-0 mt-6  rounded-lg border border-gray-300 shadow-xl">
             <p className="text-sm leading-8 pt-4">
               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
               استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله

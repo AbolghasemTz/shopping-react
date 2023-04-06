@@ -1,20 +1,13 @@
 import React from "react";
-import footerImage from "../../../assets/images/footer.jpg";
-import logo from "../../../assets/images/logo.png";
+import logo from "../../assets/images/Logo.png";
 
 // icons
 import { FiTwitter } from "react-icons/fi";
 import { BsGithub, BsLinkedin, BsInstagram, BsDribbble } from "react-icons/bs";
 function Footer(props) {
   return (
-    <footer
-      style={{
-        backgroundImage: `url(${footerImage})`,
-        backgroundSize: "cover",
-      }}
-      className="w-full md:mt-[-300px] mt-[-610px]"
-    >
-      <div className="md:pt-[400px] pt-[750px]">
+    <footer className="bg-slate-900 pt-5 mt-10">
+      <div className="">
         <div className="flex justify-around items-center mx-auto">
           <img src={logo} alt="LOGO" />
         </div>

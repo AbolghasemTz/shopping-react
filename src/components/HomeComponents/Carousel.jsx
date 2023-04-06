@@ -1,50 +1,43 @@
-import React from "react";
-import HeroSlider, {  Slide, MenuNav } from "hero-slider";
-import slideOne from "../../assets/images/slide1.jpg";
-import slideTwo from "../../assets/images/slide2.jpg";
-function Carousel(props) {
+import React from 'react';
+
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.min.css';
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+
+import pic1 from '../../assets/images/slide1.jpg'
+import pic2 from '../../assets/images/slide2.jpg'
+const images = [
+  {
+    url:pic2,
+    alt: 'Slider Image 2',
+  },
+  {
+    url:pic1,
+    alt: 'Slider Image 1',
+  },
+
+
+];
+
+
+const Slider = () => {
   return (
-    <HeroSlider
-      slidingAnimation="right_to_left"
-      height={"100vh"}
-       autoplay='true'
-      controller={{
-        initialSlide: 1,
-        slidingDuration: 500,
-        slidingDelay: 100,
-        onSliding: (nextSlide) =>
-          console.log("onSliding(nextSlide): ", nextSlide),
-        onBeforeSliding: (previousSlide, nextSlide) =>
-          console.log(
-            "onBeforeSliding(previousSlide, nextSlide): ",
-            previousSlide,
-            nextSlide
-          ),
-        onAfterSliding: (nextSlide) =>
-          console.debug("onAfterSliding(nextSlide): ", nextSlide)
-      }}
+    <Swiper
+      navigation
+      pagination={{ clickable: true }}
     
-    >
+      spaceBetween={10}
+      slidesPerView={1}
       
-      <Slide
-        background={{
-          backgroundImageSrc: slideOne,
-          backgroundAttachment: "fixed",
-          backgroundImageSizes:"cover",
-         backgroundImageClassName:'h-auto'
-        }}
-        />
-      <Slide
-        background={{
-          backgroundImageSrc: slideTwo,
-          backgroundAttachment: "fixed",
-          backgroundImageSizes:"cover",
-          backgroundImageClassName:'h-auto'
-        }}
-      />
-
-    </HeroSlider>
+    >
+      {images.map((image) => (
+        <SwiperSlide key={image.url}>
+          <img src={image.url} alt={image.alt} />
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
-}
+};
 
-export default Carousel;
+export default Slider;
