@@ -6,12 +6,13 @@ import {
   useCart,
   useCartActions,
 } from "../../context/CartContext/CartProvider";
-
+import {sucessNotify} from '../../utils/toast'
 function Product({ product }) {
   const { cart } = useCart();
   const dispatch = useCartActions();
   const incHandler = (product) => {
     dispatch({ type: "ADD_TO_CART", payload: product });
+    sucessNotify("با موفقیت انجام شد")
   };
   return (
     <motion.div

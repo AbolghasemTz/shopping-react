@@ -2,6 +2,7 @@ import React from "react";
 import { useCart, useCartActions } from "../context/CartContext/CartProvider";
 import { BsFillTrashFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { errorNotify } from "../utils/toast";
 
 function CartPage(props) {
   // context
@@ -17,6 +18,7 @@ function CartPage(props) {
   };
   const removeHandler = (product) => {
     dispatch({ type: "REMOVE", payload: product });
+    errorNotify("با موفقیت پاک شد")
   };
 
   return (

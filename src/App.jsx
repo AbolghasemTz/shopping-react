@@ -9,10 +9,12 @@ import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import Details from "./pages/Details";
 import NotFound from "./pages/NotFound";
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
     <CartProvider>
+      <Toaster />
       <Layout className="App">
         <Routes>
           <Route path="/" element={<Home />} />
