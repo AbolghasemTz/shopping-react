@@ -10,14 +10,7 @@ function Details() {
   const dispatch = useCartActions();
 
   //   actions
-  const increment = (product) => {
-    dispatch({ type: "ADD_TO_CART", payload: product });
-  };
-
-  const decrement = (product) => {
-    dispatch({ type: "DECREMENT", payload: product });
-  };
-
+ 
   const incHandler = (product) => {
     dispatch({ type: "ADD_TO_CART", payload: product });
   };
@@ -46,21 +39,6 @@ function Details() {
           <p className="text-sm text-gray-900">{product.price}تومان</p>
         </div>
 
-        <div className="flex item-center  mt-5">
-          <button
-            onClick={() => increment(product)}
-            className="bg-gray-300 px-2 py-1 rounded-md text-slate-600 text-xl ml-4"
-          >
-            +
-          </button>
-        
-          <button
-            onClick={() => decrement(product)}
-            className="bg-gray-300 px-2 py-1 rounded-md text-slate-400 text-2xl"
-          >
-            -
-          </button>
-        </div>
         <div className="mt-5">
           <button
             onClick={() => incHandler(product)}

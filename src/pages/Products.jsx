@@ -11,7 +11,8 @@ import Product from "../components/product/Product";
 
 function Products(props) {
   const [filterProducts, setFilterProducts] = useState([]);
-
+   
+ 
   return (
     <div className="grid grid-cols-12 grid-rows-[200px ,minmax(70px,1fr)] min-h-screen mt-9 w-[92%] mx-auto md:gap-x-4">
       {/*filters  */}
